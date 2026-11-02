@@ -1,0 +1,58 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.chessboard {
+    width: 100%;
+    max-width: 700px;
+    height: 700px;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+td {
+    width: 12.5%;
+    height: 12.5%;
+    position: relative;
+    font-size: 25px;
+    font-weight: bold;
+    padding: 10px;
+    vertical-align: top;
+}
+
+/* Light squares */
+tr:nth-child(odd) td:nth-child(odd),
+tr:nth-child(even) td:nth-child(even) {
+    background-color: #eeeed2;
+    color: #829769;
+}
+
+/* Dark squares */
+tr:nth-child(odd) td:nth-child(even),
+tr:nth-child(even) td:nth-child(odd) {
+    background-color: #829769;
+    color: #eeeed2;
+}
+
+/* Number position */
+td span {
+    position: absolute;
+    top: 5px;
+    left: 10px;
+}
+
+/* Letters */
+.letters td {
+    vertical-align: bottom;
+    text-align: right;
+}
